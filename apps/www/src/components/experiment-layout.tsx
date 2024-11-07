@@ -53,14 +53,9 @@ const imageVariants = cva(
 );
 
 ExperimentLayout.Image = ({
-  imageProps = {},
+  size,
   className = "",
-}: {
-  imageProps?: VariantProps<typeof imageVariants>;
-  className?: string;
-}) => {
-  const { size } = imageProps || {};
-
+}: VariantProps<typeof imageVariants> & { className?: string }) => {
   return <div className={cn(imageVariants({ size, className }))} />;
 };
 
@@ -77,19 +72,21 @@ ExperimentLayout.Footer = ({
   next: FooterLink;
 }) => {
   return (
-    <footer className="mt-16 pt-8 border-dark border-t-[0.5px] flex justify-between items-center">
-      <div className="flex flex-col gap-2 w-1/2 text-left">
-        <p className="font-medium text-grey">Previous</p>
-        <Link href={previous.href} className="text-light">
-          {previous.title}
-        </Link>
-      </div>
-      <div className="flex flex-col gap-2 w-1/2 text-right">
-        <p className="font-medium text-grey">Next</p>
-        <Link href={next.href} className="text-light">
-          {next.title}
-        </Link>
-      </div>
+    <footer className="mt-16 pt-8 border-grey border-t-[0.5px] flex justify-between items-center">
+      {/* previous */}
+      <Link
+        href={previous.href}
+        className="flex flex-col gap-2 w-fit text-light"
+      >
+        <span className="font-medium text-grey">Previous</span>
+        <span className="text-light">{previous.title}</span>
+      </Link>
+
+      {/* next */}
+      <Link href={next.href} className="flex flex-col gap-2 w-fit text-right">
+        <span className="font-medium text-grey">Next</span>
+        <span className="text-light">{next.title}</span>
+      </Link>
     </footer>
   );
 };
