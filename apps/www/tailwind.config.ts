@@ -19,6 +19,12 @@ const config: Config = {
         geist: ["var(--font-geist)"],
         geistMono: ["var(--font-geist-mono)"],
       },
+      colors: {
+        light: "#fafafa",
+        grey: "#757575",
+        lightGrey: "#3c3c3c",
+        dark: "#212121",
+      },
     },
   },
   plugins: [],
