@@ -7,13 +7,21 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["geist"],
+      serif: ["geistMono"],
+      display: ["geist"],
+      body: ["geist"],
+      mono: ["geistMono"],
+    },
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        geist: ["var(--font-geist)"],
+        geistMono: ["var(--font-geist-mono)"],
       },
     },
   },
   plugins: [],
+  darkMode: "class",
 };
 export default config;
