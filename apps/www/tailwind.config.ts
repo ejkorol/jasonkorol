@@ -23,6 +23,8 @@ const config: Config = {
         light: "#fafafa",
         grey: "#757575",
         lightGrey: "#3c3c3c",
+        darkGrey: "#0e0e0e",
+        shadow: "#333333",
         dark: "#212121",
       },
     },
