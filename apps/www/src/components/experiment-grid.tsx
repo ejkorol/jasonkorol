@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect, forwardRef } from "react";
+import { useCursor } from "./cursor";
+
 import { VariantProps, cva } from "class-variance-authority";
 import cn from "classnames";
 import { Button } from "./ui";
@@ -75,17 +78,20 @@ ExperimentGrid.Title = ({ title, date }: { title: string; date: string }) => {
 };
 
 /* FOOTER */
-ExperimentGrid.Footer = ({ title }: { title?: "prototype" | "article" }) => {
+ExperimentGrid.Footer = forwardRef<
+  HTMLButtonElement,
+  { title?: "prototype" | "article" }
+>(({ title }, buttonRef) => {
   return (
     <>
       {title ? (
-        <Button className="mt-2">
+        <Button ref={buttonRef} className="mt-2">
           {title === "prototype" ? `View Prototype ->` : `Read Article ->`}
         </Button>
       ) : null}
     </>
   );
-};
+});
 
 /* IMAGE */
 const imageVariants = cva("flex bg-grey rounded-lg ", {

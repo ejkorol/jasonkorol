@@ -3,12 +3,12 @@ import { useCursor } from "./cursor-context";
 import { motion } from "framer-motion";
 
 const Cursor = () => {
-  const { cursorRef, mousePosition } = useCursor();
+  const { cursorScope, mousePosition } = useCursor();
 
   return (
     <motion.div
       className="absolute bg-shadow rounded-full"
-      ref={cursorRef}
+      ref={cursorScope}
       style={{
         height: 30,
         width: 30,
