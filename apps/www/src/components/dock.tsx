@@ -37,7 +37,7 @@ export const Dock = () => {
   ];
 
   return (
-    <div className="absolute fixed bottom-10 flex items-center justify-center w-full">
+    <div className="absolute sticky bottom-10 flex items-center justify-center w-full">
       <FloatingDock items={dockItems} />
     </div>
   );
